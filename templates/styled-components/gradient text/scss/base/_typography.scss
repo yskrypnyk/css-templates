@@ -1,0 +1,20 @@
+.gradient {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all .2s;
+  letter-spacing: 2px;
+
+  //gradient on text
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  //background clipped to the text
+  -webkit-background-clip: text;
+  color: transparent;
+
+  &:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  }
+
+}
