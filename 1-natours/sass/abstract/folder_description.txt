@@ -1,4 +1,0 @@
-Code in this folder does not output any css:
-  - functions
-  - mixins
-  - variables

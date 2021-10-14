@@ -1,3 +1,0 @@
-This folder is for low level basics:
- - resets and
- - styles of html and body
