@@ -8,12 +8,15 @@
   background-size: cover;
   background-position: top; // image part that stays the same on scale
   position: relative;
+
   //white line on header
   /* https://bennettfeely.com/clippy/ */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-
-  //NESTING
+  @include respond(phone){
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
 
   //header__logo-box
   &__logo-box {
