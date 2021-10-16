@@ -5,3 +5,57 @@
     clear: both;
   }
 }
+
+//MEDIA QUERY MANAGER
+/*
+0 - 600px: Phone
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+1200 - 1800 : normal styles
+1800 +: Desktop
+*/
+
+//EXPLANATION
+@mixin respond-phone {
+  //rems do not affect media queries. Best option is em (1 em = 16px)
+  @media (max-width: 37.5em) {
+    @content //allows to pass a block of code into mixin
+  }
+}
+
+/*
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+IMPLEMENTING ORDER:
+1) Base + typography
+2) General layout (header, footer, grid...)
+3) Page layout
+4) Components
+
+*/
+@mixin respond($breakpoint){
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { //600px
+      @content
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { //900px
+      @content
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { //1200px
+      @content
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) { //1800[x
+      @content
+    }
+  }
+}
